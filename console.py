@@ -2,13 +2,27 @@
 import cmd
 from models.base_model import BaseModel
 from models import storage
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
-    classes = {"BaseModel": BaseModel}
+    classes = {
+        "BaseModel": BaseModel,
+        "User": User,
+        "State": State,
+        "City": City,
+        "Amenity": Amenity,
+        "Place": Place,
+        "Review": Review
+    }
 
     def do_create(self, args):
-        """Creates a new instance of BaseModel, saves it, and prints the id"""
+        """Creates a new instance of a class, saves it, and prints the id"""
         if not args:
             print("** class name missing **")
             return
@@ -68,7 +82,7 @@ class HBNBCommand(cmd.Cmd):
         print(objects)
 
     def do_update(self, args):
-        """Updates an instance based on the class name and id by adding/updating attribute"""
+        """Updates an instance based on the class name and id by adding/updating an attribute"""
         args = args.split()
         if len(args) == 0:
             print("** class name missing **")
@@ -116,4 +130,3 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
-
