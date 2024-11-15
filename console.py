@@ -50,7 +50,11 @@ class HBNBCommand(cmd.Cmd):
         if obj is None:
             print("** no instance found **")
         else:
-            print(obj)  # Print the string representation of the object
+            # If the class is User and it has a show() method, call it
+            if args[0] == "User" and hasattr(obj, "show"):
+                obj.show(args[1])  # Call the show method and pass the id
+            else:
+                print(obj)  # Print the string representation of the object
 
     def do_destroy(self, args):
         """Deletes an instance based on the class name and id"""
@@ -93,8 +97,16 @@ class HBNBCommand(cmd.Cmd):
         if args not in self.classes:
             print("** class doesn't exist **")
             return
-        count = sum(1 for key in storage.all() if key.startswith(args + "."))
-        print(count)  # Print the count of instances
+        
+        # Check if the class has a count method and call it
+        cls = self.classes[args]
+        if hasattr(cls, "count"):
+            count = cls.count()  # Call the count method for the class
+            print(count)
+        else:
+            # If no count method is defined, manually count the instances
+            count = sum(1 for key in storage.all() if key.startswith(args + "."))
+            print(count)  # Print the count of instances
 
     def do_update(self, args):
         """Updates an instance based on the class name and id by adding/updating an attribute"""

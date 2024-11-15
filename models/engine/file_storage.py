@@ -52,4 +52,6 @@ class FileStorage:
         except FileNotFoundError:
             print("File not found. No data loaded.")  # Optional: Notify when the file isn't found
         except json.JSONDecodeError:
-            print("Error decoding JSON data.")
+            print("Error decoding JSON data.")  # Handle JSON decoding errors, such as a corrupted file
+        except Exception as e:
+            print(f"Unexpected error occurred during reload: {e}")

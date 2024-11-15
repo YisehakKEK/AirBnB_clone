@@ -8,3 +8,12 @@ class User(BaseModel):
     password = ""
     first_name = ""
     last_name = ""
+
+    def show(self, user_id):
+        """Displays a user by ID"""
+        key = f"User.{user_id}"
+        user = storage.all().get(key)  # Get user by key
+        if user:
+            print(user)
+        else:
+            print(f"** no user found with id {user_id} **")
