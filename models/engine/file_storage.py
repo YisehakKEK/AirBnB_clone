@@ -25,7 +25,8 @@ class FileStorage:
     def save(self):
         """Saves all objects to a JSON file"""
         with open('file.json', 'w') as f:
-            json.dump({key: obj.to_dict() for key, obj in self.__objects.items()}, f)
+            # Using indent=4 for better readability
+            json.dump({key: obj.to_dict() for key, obj in FileStorage.__objects.items()}, f, indent=4)
 
     def reload(self):
         """Reloads all objects from a JSON file"""
@@ -33,20 +34,22 @@ class FileStorage:
             with open('file.json', 'r') as f:
                 data = json.load(f)
                 for key, value in data.items():
-                    class_name = value["__class__"]
+                    class_name = value.get("__class__")
                     if class_name == "BaseModel":
-                        self.__objects[key] = BaseModel(**value)
+                        FileStorage.__objects[key] = BaseModel(**value)
                     elif class_name == "User":
-                        self.__objects[key] = User(**value)
+                        FileStorage.__objects[key] = User(**value)
                     elif class_name == "State":
-                        self.__objects[key] = State(**value)
+                        FileStorage.__objects[key] = State(**value)
                     elif class_name == "City":
-                        self.__objects[key] = City(**value)
+                        FileStorage.__objects[key] = City(**value)
                     elif class_name == "Amenity":
-                        self.__objects[key] = Amenity(**value)
+                        FileStorage.__objects[key] = Amenity(**value)
                     elif class_name == "Place":
-                        self.__objects[key] = Place(**value)
+                        FileStorage.__objects[key] = Place(**value)
                     elif class_name == "Review":
-                        self.__objects[key] = Review(**value)
+                        FileStorage.__objects[key] = Review(**value)
         except FileNotFoundError:
-            pass
+            print("File not found. No data loaded.")  # Optional: Notify when the file isn't found
+        except json.JSONDecodeError:
+            print("Error decoding JSON data.")
