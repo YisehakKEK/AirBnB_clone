@@ -6,6 +6,7 @@ from models import storage
 from models.user import User
 from unittest.mock import patch, MagicMock
 
+
 class TestHBNBCommand(unittest.TestCase):
     """Unit tests for the HBNBCommand console."""
 
@@ -135,6 +136,7 @@ class TestHBNBCommand(unittest.TestCase):
         updated_obj = storage.all()[f"User.{obj.id}"]
         self.assertEqual(updated_obj.age, 25)
         self.assertEqual(updated_obj.city, "New York")
+
     def test_all_no_arguments(self):
         """Test all command without arguments."""
         user = User()
@@ -146,6 +148,7 @@ class TestHBNBCommand(unittest.TestCase):
             output = f.getvalue()
             self.assertIn(f"[User] ({user.id})", output)
             self.assertIn(f"[State] ({state.id})", output)
+
 
 if __name__ == "__main__":
     unittest.main()

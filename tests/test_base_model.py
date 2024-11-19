@@ -1,9 +1,10 @@
 #!/usr/bin/python
+
 import unittest
 from models.base_model import BaseModel
 
-class TestBaseModel(unittest.TestCase):
 
+class TestBaseModel(unittest.TestCase):
     def test_base_model_instance(self):
         """Test instantiation of BaseModel class."""
         my_model = BaseModel()
@@ -23,6 +24,7 @@ class TestBaseModel(unittest.TestCase):
         my_model_dict = my_model.to_dict()
         self.assertIsInstance(my_model_dict, dict)
         self.assertEqual(my_model_dict['__class__'], 'BaseModel')
+
 
 if __name__ == '__main__':
     unittest.main()

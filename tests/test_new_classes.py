@@ -1,10 +1,12 @@
 #!/usr/bin/python
+
 import unittest
 from models.state import State
 from models.city import City
 from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
+
 
 class TestNewClasses(unittest.TestCase):
     """Test cases for new classes."""
@@ -67,6 +69,7 @@ class TestNewClasses(unittest.TestCase):
         self.assertEqual(review.user_id, "user_id")
         self.assertEqual(review.text, "Amazing place! Highly recommend.")
         self.assertIsInstance(review, Review)
+
 
 if __name__ == "__main__":
     unittest.main()

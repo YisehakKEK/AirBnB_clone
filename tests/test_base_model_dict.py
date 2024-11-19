@@ -1,6 +1,8 @@
 #!/usr/bin/python
+
 import unittest
 from models.base_model import BaseModel
+
 
 class TestBaseModel(unittest.TestCase):
     def test_instance_creation(self):
@@ -34,6 +36,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(my_new_model.name, my_model.name)
         self.assertEqual(my_new_model.my_number, my_model.my_number)
         self.assertEqual(my_model.id, my_new_model.id)
+
 
 if __name__ == '__main__':
     unittest.main()

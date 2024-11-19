@@ -1,7 +1,9 @@
 #!/usr/bin/python
+
 import unittest
 from models import storage
 from models.user import User
+
 
 class TestFileStorageWithUser(unittest.TestCase):
     """Test cases for FileStorage with User class."""
@@ -32,6 +34,7 @@ class TestFileStorageWithUser(unittest.TestCase):
         my_user2.password = "root"
         my_user2.save()
         print(my_user2)
+
 
 if __name__ == "__main__":
     unittest.main()
