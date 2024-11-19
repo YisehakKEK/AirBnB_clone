@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python 
+#!/usr/bin/python3
 import cmd
 import json
 from models import storage
