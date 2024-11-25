@@ -1,0 +1,48 @@
+/* styles/5-filters.css */
+.filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px; /* Adjust based on actual padding needs */
+    height: 70px;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+button {
+    font-size: 18px;
+    background-color: #FF5A5F;
+    color: white;
+    height: 48px;
+    width: 20%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+}
+
+.locations, .amenities {
+    width: 25%;
+    height: 100%;
+    padding: 0 5px; /* Reduced padding to decrease space */
+}
+.locations {
+    border-right: 1px solid #DDDDDD;
+    padding-right: 5px; /* Reduce right padding to bring text closer to the border */
+    padding-left: 10px; /* More padding on the left to match visual balance */
+}
+.amenities {
+    padding-right: 5px; /* Reduce right padding to bring text closer to the border */
+    padding-left: 1px; /* More padding on the left to match visual balance */    
+}
+h3, h4 {
+    margin: 10px 0; /* Keeping existing margin settings */
+}
+h3 {
+    font-weight: 600;
+}
+h4 {
+    font-weight: 400;
+    font-size: 14px;
+}
+

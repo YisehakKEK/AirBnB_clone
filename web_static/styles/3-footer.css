@@ -1,0 +1,22 @@
+footer {
+    background-color: white;
+    height: 60px;
+    width: 100%;
+    border-top: 1px solid #CCCCCC;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px; /* Adjust this value as needed */
+    padding-right: 15px; /* Adjust this value as needed */
+    box-sizing: border-box; /* Ensures padding is included in the total width calculation */
+}
+
+.footer-content {
+    width: calc(100% - 30px); /* Adjusts width considering padding */
+    border-top: 1px solid #CCCCCC;
+    text-align: center;
+    padding: 0 15px; /* Padding on both sides */
+}
+

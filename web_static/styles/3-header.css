@@ -1,0 +1,12 @@
+header {
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+    display: flex;
+    align-items: center;
+    padding-left: 20px; /* Space for the logo */
+    background-image: url('../images/logo.png'); /* Adding the logo */
+    background-position: left center; /* Aligning the logo to the left and vertically center */
+    background-repeat: no-repeat; /* Preventing the logo from repeating */
+}

@@ -1,0 +1,97 @@
+/* styles/5-filters.css */
+.filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px; /* Adjust based on actual padding needs */
+    height: 70px;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+button {
+    font-size: 18px;
+    background-color: #FF5A5F;
+    color: white;
+    height: 48px;
+    width: 20%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+}
+.locations, .amenities {
+    position: relative;  /* This is crucial for containing the absolutely positioned popover */
+    width: 25%;          /* Adjust width as necessary */
+    height: 100%;
+    padding: 0 5px;
+}
+.locations {
+    border-right: 1px solid #DDDDDD;
+    padding-right: 5px; /* Reduce right padding to bring text closer to the border */
+    padding-left: 10px; /* More padding on the left to match visual balance */
+}
+.amenities {
+    padding-right: 5px; /* Reduce right padding to bring text closer to the border */
+    padding-left: 1px; /* More padding on the left to match visual balance */    
+}
+h3, h4 {
+    margin: 10px 0; /* Keeping existing margin settings */
+}
+h3 {
+    font-weight: 600;
+}
+h4 {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+
+
+/* Styles for the dropdowns */
+.popover {
+    display: none;
+    position: absolute;
+    top: 100%;           /* Positions the dropdown right below the parent div */
+    left: 0;             /* Aligns the dropdown with the left edge of the parent div */
+    right: 0;            /* Aligns the dropdown with the right edge of the parent div */
+    background-color: #FAFAFA;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);  /* Optional shadow for better visibility */
+    z-index: 1000;
+}
+
+/* Hover effect to display dropdown */
+.locations:hover .popover,
+.amenities:hover .popover {
+    display: block;
+}
+
+/* Styles for location and amenities headers within filters */
+.locations h3, .amenities h3 {
+    margin-bottom: 10px;
+}
+
+/* Specific styles for nested dropdowns in Locations */
+.locations .popover h2 {
+    font-size: 16px; /* As specified, for state names */
+}
+
+.locations ul, .amenities ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+/* Styles for list items */
+.locations li, .amenities li {
+    padding: 8px 12px; /* Padding for each item */
+    border-bottom: 1px solid #EEE; /* Separates items visually */
+    cursor: pointer; /* Indicates the item is clickable */
+}
+
+.locations li:last-child,
+.amenities li:last-child {
+    border-bottom: none; /* Removes bottom border from the last item */
+}

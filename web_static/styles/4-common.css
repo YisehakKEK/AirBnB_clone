@@ -1,0 +1,14 @@
+body, .container {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1000px;
+    font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100% !important; /* This makes it take full width */
+    max-width: 1000px; /* This limits its width to 1000px when there's enough space */
+    box-sizing: border-box; /* Includes padding and border in the element's total width */
+}
